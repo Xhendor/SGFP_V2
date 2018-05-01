@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sgfp.frontend:war">
+    <output-path>$PROJECT_DIR$/sgfp.frontend/target</output-path>
+    <root id="archive" name="sgfp.frontend-2.0.war">
+      <element id="artifact" artifact-name="sgfp.frontend:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SGFP_V2.iml" filepath="$PROJECT_DIR$/SGFP_V2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sgfp.entidades/sgfp.entidades.iml" filepath="$PROJECT_DIR$/sgfp.entidades/sgfp.entidades.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sgfp.frontend/sgfp.frontend.iml" filepath="$PROJECT_DIR$/sgfp.frontend/sgfp.frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sgfp.negocios/sgfp.negocios/sgfp.negocios.iml" filepath="$PROJECT_DIR$/sgfp.negocios/sgfp.negocios/sgfp.negocios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sgfp.persistencia/sgfp.persistencia.iml" filepath="$PROJECT_DIR$/sgfp.persistencia/sgfp.persistencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sgfp.servicio/sgfp.servicio.iml" filepath="$PROJECT_DIR$/sgfp.servicio/sgfp.servicio.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sgfp.entidades" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sgfp.frontend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sgfp.negocios/sgfp.negocios" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sgfp.persistencia" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sgfp.servicio" charset="UTF-8" />
+  </component>
+</project>
