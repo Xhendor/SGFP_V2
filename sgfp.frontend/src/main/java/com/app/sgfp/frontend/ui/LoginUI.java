@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -24,13 +25,19 @@ public class LoginUI implements Serializable {
 
     private String user;
     private String password;
-    private final LoginHelper helper;
+    private LoginHelper helper;
     private boolean logged;
 
     /**
      * Creates a new instance of LoginUI
      */
     public LoginUI() {
+
+    }
+
+    @PostConstruct
+    public void init(){
+
         helper = new LoginHelper();
     }
 
@@ -59,8 +66,6 @@ public class LoginUI implements Serializable {
         } else {
             System.err.println("Nop, no se pudo ingresar");
         }
-        //  FacesContext context = FacesContext.getCurrentInstance();
-        // context.getExternalContext().getSessionMap().put("user", user);
 
     }
 

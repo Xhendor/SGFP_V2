@@ -27,7 +27,6 @@
         <title>Login</title>
     </h:head>
     <h:body><!--login modal-->
-        <h:form id="login">
         <div id="loginModal" class="modal show" style="display: block" tabindex="-1" role="dialog" aria-hidden="false">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -35,7 +34,7 @@
                         <h1 class="text-center">Bienvenido al SGFP</h1>
                     </div>
                     <div class="modal-body">
-                        <form class="form col-md-12 center-block">
+                        <h:form id="login" class="form col-md-12 center-block">
                             <div class="form-group">
                                 <p:inputText type="text"  value="#{loginUI.user}" class="form-control input-lg" placeholder="Email"/>
                             </div>
@@ -43,10 +42,10 @@
                                 <p:password  class="form-control input-lg" value="#{loginUI.password}" placeholder="Password"/>
                             </div>
                             <div class="form-group">
-                                <p:commandButton  actionListener="#{loginUI.loginUser}" title="Sing In" class="btn btn-primary btn-lg btn-block"></p:commandButton>
+                                <p:commandButton  ajax="true" actionListener="#{loginUI.loginUser}" title="Sing In" class="btn btn-primary btn-lg btn-block"></p:commandButton>
                                 <span class="pull-right"><a href="#">Registro</a></span><span><a href="#">Necesitas ayuda?</a></span>
                             </div>
-                        </form>
+                        </h:form>
                     </div>
                     <div class="modal-footer" style="display: block">
                         <div class="text-center" style="font-size: small">Desarrollado por Alumnos de "Aplicaciones Web con Base de Datos"</div>    
@@ -54,7 +53,7 @@
                 </div>
             </div>
         </div>
-        </h:form>
+
        
 
     </h:body>

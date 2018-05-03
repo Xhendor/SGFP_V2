@@ -15,12 +15,8 @@ import java.io.Serializable;
 public class LoginHelper implements Serializable{
 
     
-    public LoginHelper() {
-    
-    
-    }
-    
-    
+    public LoginHelper() {}
+
     public boolean login(String user, String pass){
     
         return ServiceFacadeLocator.getInstanceUsuarioFacade().login(user, pass);
