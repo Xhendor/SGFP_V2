@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+    >
     <h:head>
 
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -27,6 +29,7 @@
         <title>Login</title>
     </h:head>
     <h:body><!--login modal-->
+
         <div id="loginModal" class="modal show" style="display: block" tabindex="-1" role="dialog" aria-hidden="false">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -35,19 +38,25 @@
                     </div>
                     <div class="modal-body">
                         <h:form id="login" class="form col-md-12 center-block">
+
                             <div class="form-group">
-                                <p:inputText type="text"  value="#{loginUI.user}" class="form-control input-lg" placeholder="Email"/>
+                                <p:inputText type="text"  value="#{loginUI.user}" class="form-control input-lg" placeholder="Email" required="true"/>
                             </div>
                             <div class="form-group">
-                                <p:password  class="form-control input-lg" value="#{loginUI.password}" placeholder="Password"/>
+                                <p:password  class="form-control input-lg" value="#{loginUI.password}" placeholder="Password" required="true"/>
                             </div>
                             <div class="form-group">
-                                <p:commandButton  ajax="true" actionListener="#{loginUI.loginUser}" title="Sing In" class="btn btn-primary btn-lg btn-block"></p:commandButton>
+                                <p:commandButton    actionListener="#{loginUI.loginUser}" title="Sing In" update="@form"   class="btn btn-primary btn-lg btn-block"></p:commandButton>
                                 <span class="pull-right"><a href="#">Registro</a></span><span><a href="#">Necesitas ayuda?</a></span>
+                            </div>
+
+                            <div jsf:id="alerta" jsf:rendered="#{!loginUI.logged}" class=" text-center alert alert-danger">
+                                <strong>Upps!</strong> Los datos son incorrectos!!!.
                             </div>
                         </h:form>
                     </div>
-                    <div class="modal-footer" style="display: block">
+
+                    <div class="modal-footer" style="#{loginUI.style}">
                         <div class="text-center" style="font-size: small">Desarrollado por Alumnos de "Aplicaciones Web con Base de Datos"</div>    
                     </div>
                 </div>

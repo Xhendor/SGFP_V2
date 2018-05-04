@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     
     <h:head>
@@ -10,14 +11,37 @@
     <h:body>
         
         <h:form>
-                    <h:inputText title="Hola" />
-                    <h:commandButton title="Soy boton"></h:commandButton>
 
+
+            <div> Soy #{contentUI.userName}</div>
+            <div> Loggeado:[ #{contentUI.isLogged}]</div>
+
+
+
+
+
+            <p:dataTable var="car" value="#{contentUI.listaDeCarros}">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Model" />
+                    </f:facet>
+                    <h:outputText value="#{car.model}" />
+                    <f:facet name="footer">
+                        8 digit code
+                    </f:facet>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Year" />
+                    </f:facet>
+                    <h:outputText value="#{car.year}" />
+                </p:column>
+            </p:dataTable>
         </h:form>
         
         
-        <div>TODO write content</div>
-        
+
         
     </h:body>
 </html>

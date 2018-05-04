@@ -6,6 +6,8 @@
 package com.app.sgfp.frontend.ui;
 
 import com.app.sgfp.frontend.helper.LoginHelper;
+import com.app.sgfp.frontend.util.Util;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.logging.Level;
@@ -13,6 +15,8 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 
 /**
@@ -25,8 +29,13 @@ public class LoginUI implements Serializable {
 
     private String user;
     private String password;
+
+
+
+    private String style;
     private LoginHelper helper;
-    private boolean logged;
+
+    private boolean logged=true;
 
     /**
      * Creates a new instance of LoginUI
@@ -39,6 +48,7 @@ public class LoginUI implements Serializable {
     public void init(){
 
         helper = new LoginHelper();
+        style="text-center";
     }
 
     /**
@@ -65,6 +75,7 @@ public class LoginUI implements Serializable {
             }
         } else {
             System.err.println("Nop, no se pudo ingresar");
+
         }
 
     }
@@ -103,5 +114,14 @@ public class LoginUI implements Serializable {
     public void setLogged(boolean logged) {
         this.logged = logged;
     }
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
 
 }
