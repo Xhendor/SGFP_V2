@@ -10,8 +10,8 @@
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
         <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sgfp?zeroDateTimeBehavior=convertToNull</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">chendo22</property>
+        <property name="hibernate.connection.username">root1</property>
+        <property name="hibernate.connection.password">12345</property>
         
         <property name="c3p0.autoCommitOnClose">true</property>
         <property name="c3p0.acquire_increment">1</property>

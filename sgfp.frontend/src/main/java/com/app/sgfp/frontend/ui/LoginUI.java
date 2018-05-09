@@ -18,6 +18,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -67,7 +68,10 @@ public class LoginUI implements Serializable {
 
         if (logged) {
             try {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("/app/content");
+                HttpServletRequest reqt =(HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            
+                FacesContext.getCurrentInstance().getExternalContext().redirect(reqt.getContextPath()+"/app/content");
+                
                 FacesContext context = FacesContext.getCurrentInstance();
                 context.getExternalContext().getSessionMap().put("username", user);
             } catch (IOException ex) {
