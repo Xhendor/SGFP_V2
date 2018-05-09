@@ -5,6 +5,7 @@
  */
 package com.app.sgfp.negocios.integracion;
 
+import com.app.sgfp.entidades.Vivienda;
 import com.app.sgfp.negocios.facade.UsuarioFacade;
 import com.app.sgfp.negocios.facade.ViviendaFacade;
 
@@ -16,7 +17,7 @@ public class ServiceFacadeLocator {
 
     private static ViviendaFacade viviendaFacade;
     private static UsuarioFacade usuarioFacade;
-    public static ViviendaFacade getInstanceContactoDAO() {
+    public static ViviendaFacade getInstanceViviendasFacade() {
         if (viviendaFacade == null) {
             viviendaFacade = new ViviendaFacade();
             return viviendaFacade;
@@ -33,5 +34,6 @@ public class ServiceFacadeLocator {
             return usuarioFacade;
         }
     }
+
 
 }

@@ -6,13 +6,21 @@
 package com.app.sgfp.frontend.ui;
 
 import com.app.sgfp.frontend.helper.LoginHelper;
+import com.app.sgfp.frontend.util.Util;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+
+import static com.app.sgfp.frontend.util.Util.*;
 
 /**
  *
@@ -24,14 +32,26 @@ public class LoginUI implements Serializable {
 
     private String user;
     private String password;
-    private final LoginHelper helper;
-    private boolean logged;
+
+
+
+    private String style;
+    private LoginHelper helper;
+
+    private boolean logged=true;
 
     /**
      * Creates a new instance of LoginUI
      */
     public LoginUI() {
+
+    }
+
+    @PostConstruct
+    public void init(){
+
         helper = new LoginHelper();
+        style="text-center";
     }
 
     /**
@@ -50,17 +70,17 @@ public class LoginUI implements Serializable {
 
         if (logged) {
             try {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("/app/content");
-                FacesContext context = FacesContext.getCurrentInstance();
-                context.getExternalContext().getSessionMap().put("username", user);
+
+                 redireccionar("/app/content");
+                 obtenerMapaDeSession().put("username", user);
+
             } catch (IOException ex) {
                 Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             System.err.println("Nop, no se pudo ingresar");
+
         }
-        //  FacesContext context = FacesContext.getCurrentInstance();
-        // context.getExternalContext().getSessionMap().put("user", user);
 
     }
 
@@ -98,5 +118,14 @@ public class LoginUI implements Serializable {
     public void setLogged(boolean logged) {
         this.logged = logged;
     }
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
 
 }
