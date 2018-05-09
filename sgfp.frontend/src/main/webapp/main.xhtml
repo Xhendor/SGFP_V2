@@ -9,37 +9,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        
-        <h:form>
+
+        <h:form id="formaDelMal">
 
 
             <div> Soy #{contentUI.userName}</div>
             <div> Loggeado:[ #{contentUI.isLogged}]</div>
 
+            <p:dataTable id="laTabla" var="vivienda"
+                         selectionMode="single"
+                         selection="${contentUI.viviedaSelected}"
+                         value="#{contentUI.allViviendas}" >
 
-
-
-
-            <p:dataTable var="car" value="#{contentUI.listaDeCarros}">
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Model" />
+                        <h:outputText value="Calle" />
                     </f:facet>
-                    <h:outputText value="#{car.model}" />
-                    <f:facet name="footer">
-                        8 digit code
-                    </f:facet>
+                    <h:outputText value="#{vivienda.calle}" />
+
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Year" />
+                        <h:outputText value="Numero Ext" />
                     </f:facet>
-                    <h:outputText value="#{car.year}" />
+                    <h:outputText value="#{vivienda.numeroExterior}" />
                 </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Habitada" />
+                    </f:facet>
+                    <h:outputText value="#{vivienda.habitada}" />
+
+                </p:column>
+
+                <p:ajax event="rowSelect" listener="#{contentUI.onRowSelect}" update="@form" />
+
             </p:dataTable>
         </h:form>
-        
+
+        <h:form>
+
+            <p:inputText title="NumeroExt" value="#{contentUI.vivienda.numeroExterior}"/>
+            <p:inputText title="Calle" value="#{contentUI.vivienda.calle}" />
+
+            <p:commandButton title="Guardar"
+                             actionListener="#{contentUI.guardarVivienda}"
+                             update="formaDelMal:laTabla"></p:commandButton>
+        </h:form>
         
 
         
